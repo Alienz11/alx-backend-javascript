@@ -33,8 +33,8 @@ const countStudents = (argPath) => {
     .reduce((pre, cur) => (pre || []).length + cur.length);
   console.log(`Number of students: ${totalStudents}`);
   for (const [field, group] of Object.entries(studGroup)) {
-    const studNames = group.map((student) => student.firstname).join(', ');
-    console.log(`Number of students in ${field}: ${group.length}. List: ${studNames}`);
+    const Names = group.map((student) => student.firstname).join(', ');
+    console.log(`Number of students in ${field}: ${group.length}. List: ${Names}`);
   }
 };
 
