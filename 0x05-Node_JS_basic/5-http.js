@@ -22,8 +22,8 @@ const countStudents = (argPath) => new Promise((resolve, reject) => {
           .split('\n');
         const studGroup = {};
         const dbFieldNames = files[0].split(',');
-          const studNames = dbFieldNames.slice(0, dbFieldNames.length - 1);
-	  const preports = [];
+        const studNames = dbFieldNames.slice(0, dbFieldNames.length - 1);
+        const preports = [];
 
         for (const fil of files.slice(1)) {
           const studRecords = fil.split(',');
@@ -35,7 +35,7 @@ const countStudents = (argPath) => new Promise((resolve, reject) => {
           const entries = studNames
             .map((propName, idx) => [propName, studValues[idx]]);
           studGroup[field].push(Object.fromEntries(entries));
-       }
+        }
 
         const totalStudents = Object
           .values(studGroup)
@@ -45,8 +45,8 @@ const countStudents = (argPath) => new Promise((resolve, reject) => {
           const Names = group.map((student) => student.firstname).join(', ');
           preports.push(`Number of students in ${field}: ${group.length}. List: ${Names}`);
         }
-	  resolve(preports.join('\n'));
-    }
+        resolve(preports.join('\n'));
+      }
     });
   }
 });
