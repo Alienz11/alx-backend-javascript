@@ -2,7 +2,6 @@ import readDatabase from '../utils';
 
 const VALID_MAJORS = ['CS', 'SWE'];
 
-
 class StudentsController {
   static getAllStudents(request, response) {
     const argPath = process.argv.length > 2 ? process.argv[2] : '';
